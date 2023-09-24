@@ -1,11 +1,17 @@
-import { StatusBar } from 'expo-status-bar';
-import { StyleSheet, Text, View } from 'react-native';
+import { useState } from "react";
+import { StatusBar, setStatusBarBackgroundColor } from 'expo-status-bar';
+import { SafeAreaView, StyleSheet, Text, View, TextInput, Button } from 'react-native';
+import QRCode from 'react-native-qrcode-svg';
 
 export default function App() {
+
+  const [inputText, setInputText] = useState(null);
+  const [qrValue, setQrValue] = useState(null);
+
   return (
     <View style={styles.container}>
-      <Text>Open up App.js to start working on your app!</Text>
-      <StatusBar style="auto" />
+      <Text >Open up App.js to start working on your app!</Text>
+      <StatusBar style="light" />
     </View>
   );
 }
@@ -13,7 +19,7 @@ export default function App() {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: '#fff',
+    backgroundColor: '#964B00',
     alignItems: 'center',
     justifyContent: 'center',
   },
