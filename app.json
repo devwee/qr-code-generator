@@ -1,11 +1,13 @@
 {
   "expo": {
+    "owner": "devwee",
     "name": "QR Code Generator vBETA",
-    "slug": "A basic QR Code Generator.",
+    "slug": "qr-code-generator",
+    "privacy": "public",
     "version": "1.0.0",
     "orientation": "portrait",
     "icon": "./assets/icon.png",
-    "userInterfaceStyle": "light",
+    "userInterfaceStyle": "automatic",
     "splash": {
       "image": "./assets/splash.png",
       "resizeMode": "cover",
@@ -23,10 +25,16 @@
         "foregroundImage": "./assets/icon.png",
         "backgroundColor": "#ffffff",
         "package": "com.devwee.qrcodegenerator"
-      }
+      },
+      "package": "com.devwee.qrcodegenerator"
     },
     "web": {
       "favicon": "./assets/favicon.png"
+    },
+    "extra": {
+      "eas": {
+        "projectId": "87a0dc0c-be93-4faf-b810-c3a28a19ecf9"
+      }
     }
   }
 }
