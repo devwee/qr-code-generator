@@ -1,14 +1,14 @@
 {
   "expo": {
-    "name": "qr-code-generator",
-    "slug": "qr-code-generator",
+    "name": "QR Code Generator vBETA",
+    "slug": "A basic QR Code Generator.",
     "version": "1.0.0",
     "orientation": "portrait",
     "icon": "./assets/icon.png",
     "userInterfaceStyle": "light",
     "splash": {
       "image": "./assets/splash.png",
-      "resizeMode": "contain",
+      "resizeMode": "cover",
       "backgroundColor": "#ffffff"
     },
     "assetBundlePatterns": [
