@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { StatusBar } from 'expo-status-bar';
-import { Platform, StyleSheet, Text, View, TextInput, Pressable, KeyboardAvoidingView, Image } from 'react-native';
+import { Platform, StyleSheet, Text, View, TextInput, Pressable, KeyboardAvoidingView, Alert, Keyboard } from 'react-native';
 import FontAwesome from "@expo/vector-icons/FontAwesome";
 import QRCode from 'react-native-qrcode-svg';
 
@@ -12,13 +12,31 @@ export default function App() {
   const onResetQRValue = () =>{
     setQrValue(null);
     setInputText(null);
+    if (Platform.OS === "ios") {
+      Alert.alert('Sucesso!', 'Dados resetados com sucesso.', [
+        {text: 'OK'}
+      ]);
+      Keyboard.dismiss();
+    } else {
+      alert('Dados resetados com sucesso.');
+      Keyboard.dismiss();
+    }
   };
 
   const generateQRCode = () => {
     if (inputText == null) {
-      alert('Preencha o campo necessário.');
+      if (Platform.OS === "ios") {
+        Alert.alert('Atenção!', 'Preencha o campo corretamente!', [
+          {text: 'OK'}
+        ]);
+        Keyboard.dismiss();
+      } else {
+        alert('Preencha o campo corretamente!');
+        Keyboard.dismiss();
+      }
     } else {
       setQrValue(inputText);
+      Keyboard.dismiss();
     }
   }
 
