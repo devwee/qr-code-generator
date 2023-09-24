@@ -14,6 +14,14 @@ export default function App() {
     setInputText(null);
   };
 
+  const generateQRCode = () => {
+    if (inputText == null) {
+      alert('Preencha o campo necessário.');
+    } else {
+      setQrValue(inputText)
+    }
+  }
+
   return (
     <KeyboardAvoidingView 
         style={styles.safeAreaView} 
@@ -36,16 +44,16 @@ export default function App() {
       </View>
 
       <View style={styles.container}>
-        <Text style={styles.text}>Insira a sua URL:</Text>
+        <Text style={styles.text}>Insira seu text e/ou URL:</Text>
         <TextInput
           style={styles.textInput}
           onChangeText={(inputText) => setInputText(inputText)}
           value={inputText}
-          placeholder="Preencha com seu text e/ou endereço de link"
+          placeholder="Preencha com seu texto e/ou endereço de link"
         />
 
         <View style={[styles.buttonContainer, {borderWidth: 3, borderColor: "#464646", borderRadius: 18 }]}>          
-          <Pressable style={[styles.button, {backgroundColor: '#464646'}]} onPress={() => setQrValue(inputText)}>
+          <Pressable style={[styles.button, {backgroundColor: '#464646'}]} onPress={() => generateQRCode(inputText)}>
             <FontAwesome
               name="qrcode"
               size={18}
@@ -118,21 +126,21 @@ const styles = StyleSheet.create({
     height: 60,
   },
   buttonContainer: {
-    width:320,
-    height:68,
-    marginHorizontal: 50,
     alignItems: 'center',
     justifyContent: 'center',
+    width:320,
+    height:68,
+    marginHorizontal: 50,    
     padding: 4,
     margin:5,
   }, 
   button: {
-    borderRadius: 10,
-    width: '100%',
-    height: '100%',
     alignItems: 'center',
     justifyContent: 'center',
     flexDirection: 'row',
+    borderRadius: 10,
+    width: '100%',
+    height: '100%',    
   },
   buttonIcon: {
     paddingRight: 8,
