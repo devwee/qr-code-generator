@@ -37,6 +37,15 @@ export default function App() {
     } else {
       setQrValue(inputText);
       Keyboard.dismiss();
+      if (Platform.OS === "ios") {
+        Alert.alert('Sucesso!', 'Seu QR Code foi gerado com sucesso!', [
+          {text: 'OK'}
+        ]);
+        Keyboard.dismiss();
+      } else {
+        alert('Seu QR Code foi gerado com sucesso!');
+        Keyboard.dismiss();
+      }
     }
   }
 
