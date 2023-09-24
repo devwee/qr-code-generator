@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { StatusBar } from 'expo-status-bar';
-import { Platform, StyleSheet, Text, View, TextInput, Pressable, KeyboardAvoidingView } from 'react-native';
+import { Platform, StyleSheet, Text, View, TextInput, Pressable, KeyboardAvoidingView, Image } from 'react-native';
 import FontAwesome from "@expo/vector-icons/FontAwesome";
 import QRCode from 'react-native-qrcode-svg';
 
@@ -18,7 +18,7 @@ export default function App() {
     if (inputText == null) {
       alert('Preencha o campo necessário.');
     } else {
-      setQrValue(inputText)
+      setQrValue(inputText);
     }
   }
 
@@ -28,6 +28,7 @@ export default function App() {
         behavior={Platform.OS === "ios" ? "padding" : "height"} 
         keyboardVerticalOffset={Platform.OS === 'ios' ? 40 : 0}
       >
+
       <View style={styles.containerQr}>
         { qrValue ? <Text style={styles.title}>Seu QR Code:</Text> : '' }
         {qrValue ? 
@@ -50,6 +51,7 @@ export default function App() {
           onChangeText={(inputText) => setInputText(inputText)}
           value={inputText}
           placeholder="Preencha com seu texto e/ou endereço de link"
+          placeholderTextColor="#fff"
         />
 
         <View style={[styles.buttonContainer, {borderWidth: 3, borderColor: "#464646", borderRadius: 18 }]}>          
@@ -86,7 +88,7 @@ const styles = StyleSheet.create({
   safeAreaView: {
     flex: 1,
     backgroundColor: '#2C2C2C',    
-  },
+  },  
   title: {
     marginBottom: 15,        
     alignItems: 'center',
