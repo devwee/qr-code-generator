@@ -19,5 +19,4 @@ Project for educational purposes.
 After clone, execute the npm i and start your expo.
 
 ## Demo
-![](https://github.com/devwee/qr-code-generator/assets/111082011/0a713b25-c8e4-4ad3-8c44-27719c8435fe)
-![](https://github.com/devwee/qr-code-generator/assets/111082011/2636e8a8-421b-46b8-8ffc-8591f7817436)
+![demo](https://github.com/devwee/qr-code-generator/assets/111082011/b8174f81-f691-4562-b4e4-213316bd28f5)
